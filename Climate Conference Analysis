@@ -1,0 +1,77 @@
+Climate Conference Project
+Database: https://www.db-fiddle.com/f/pxMci1sLL945KHKYvpe9W6/1
+
+LEFT JOIN: List all VIPs and their hotel (if they have a reservation).
+SELECT 
+    v.member_id,
+    v.first_name,
+    v.last_name,
+    h.hotel_name
+FROM vips v
+LEFT JOIN reservations r 
+    ON v.member_id = r.member_id
+LEFT JOIN hotels h 
+    ON r.hotel = h.hotel_id;
+
+INNER JOIN: Find all VIPs who are attending the thank you dinner.
+SELECT 
+    v.first_name,
+    v.last_name,
+    h.hotel_name
+FROM vips v
+INNER JOIN reservations r 
+    ON v.member_id = r.member_id
+INNER JOIN hotels h 
+    ON r.hotel = h.hotel_id
+WHERE r.dinner_rsvp = 1;
+
+Multiple JOINs: Show all VIP speakers, the event they’re presenting at, and which hotel they are staying in.
+SELECT 
+    v.first_name,
+    v.last_name,
+    e.event_name,
+    h.hotel_name
+FROM vips v
+JOIN events e 
+    ON v.event = e.event_id
+LEFT JOIN reservations r 
+    ON v.member_id = r.member_id
+LEFT JOIN hotels h 
+    ON r.hotel = h.hotel_id;
+
+SELF JOIN: Find VIPs who provide feedback to others and the corresponding VIPs who receive their feedback.
+
+SELECT v1.first_name AS feedback_giver, v1.last_name AS giver_last, 
+       v2.first_name AS feedback_receiver, v2.last_name AS receiver_last
+FROM vips v1
+JOIN vips v2 ON v1.provides_feedback_to = v2.member_id;
+
+
+Query with a Subquery: Find all VIPs who joined before 2000 and have a reservation.
+
+SELECT v.first_name, v.last_name, v.member_since
+FROM vips v
+WHERE v.member_since < 2000
+  AND v.member_id IN (
+        SELECT member_id
+        FROM reservations
+    );
+
+
+Custom Query: Find the hotel with the most VIPs staying.
+
+SELECT h.hotel_name, COUNT(r.member_id) AS vip_count
+FROM reservations r
+JOIN hotels h ON r.hotel = h.hotel_id
+GROUP BY h.hotel_name
+ORDER BY vip_count DESC;
+
+
+Custom Query: List government-affiliated VIPs who RSVP’d for the welcome party.
+
+SELECT v.first_name, v.last_name, v.association, h.hotel_name
+FROM vips v
+JOIN reservations r ON v.member_id = r.member_id
+JOIN hotels h ON r.hotel = h.hotel_id
+WHERE v.assoc_type = 'government'
+  AND r.welcome_rsvp = 1;
