@@ -1,44 +1,36 @@
-SQL Case Studies
+# SQL Case Studies
 
-This repository contains a collection of SQL analyses and case studies developed as part of my data analytics training. Each project demonstrates how I use SQL to clean data, segment customers, calculate KPIs, and answer real business questions.
+A collection of SQL analyses I built while going through my data analytics training. Each one is focused on a real business question — not just writing queries for the sake of it, but actually trying to figure something out.
 
-The goal of this repository is to showcase practical, business-focused SQL used in areas such as customer behavior, sales performance, and operational analysis.
+---
 
-⸻
+## What's Inside
 
-What’s Inside
+Each folder has a separate case study with the dataset, the SQL scripts I wrote, and notes on what I was trying to answer.
 
-Each folder in this repository represents a separate SQL case study and includes:
-	•	Raw or cleaned datasets
-	•	SQL scripts used for analysis
-	•	Queries that calculate metrics, trends, and segments
-	•	Business-focused questions and results
+---
 
-⸻
+## SQL Skills I Used
 
-SQL Skills Demonstrated
-	•	Data cleaning and preparation
-	•	Joins across multiple tables
-	•	Aggregations and KPI calculations
-	•	Customer and revenue segmentation
-	•	Trend and performance analysis
+- Data cleaning and preparation
+- Joins across multiple tables
+- Aggregations and KPI calculations
+- Customer and revenue segmentation
+- Trend and performance analysis
 
-⸻
+---
 
-Example Case Studies
+## Case Studies
 
-Examples of analyses included in this repository:
-	•	Customer and order behavior
-	•	Sales and revenue performance
-	•	Company and industry comparisons
-	•	Music and streaming analytics
-	•	Environmental and trend data
+- **Customer and Order Analytics** — looking at order behavior and buying patterns
+- **Fortune 500 Analysis** — comparing companies across industries
+- **Spotify Analytics** — streaming and music performance data
+- **Superstore Database** — sales and revenue trends
+- **Climate Conference Analysis** — environmental and trend data
 
-⸻
+---
 
-How This Fits My Portfolio
+## Full Portfolio
 
-These SQL case studies support my end-to-end analytics projects by demonstrating my ability to work directly with data, write analytical queries, and extract insights that can be visualized in dashboards or used for business decisions.
-
-For full projects that include SQL, Excel, and Tableau dashboards, visit my main portfolio:
-https://github.com/zambriaa/Zambria-Data-Analytics-Portfolio
+For projects that include SQL, Excel, and Tableau dashboards together, check out my main portfolio:
+[github.com/zambriaa/Zambria-Data-Analytics-Portfolio](https://github.com/zambriaa/Zambria-Data-Analytics-Portfolio)
