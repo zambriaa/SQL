@@ -1,6 +1,6 @@
 # SQL Case Studies
 
-A collection of SQL analyses I built while going through my data analytics training. Each one is focused on a solving a real business question.
+A collection of SQL analyses I built while going through my data analytics training. Each one is focused on solving a real business question.
 
 ---
 
